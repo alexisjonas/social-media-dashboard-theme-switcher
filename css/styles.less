@@ -1,0 +1,186 @@
+@import (css) url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+    /* Fonts */
+
+    @fontsize: 14px;
+    @fontfamily: 'Inter', sans-serif;
+
+
+    /* Colors */
+
+    /* Primary */
+
+    @LimeGreen: hsl(163, 72%, 41%);
+    @BrightRed: hsl(356, 69%, 56%);
+
+    @Facebook: hsl(208, 92%, 53%);
+    @Twitter: hsl(203, 89%, 53%);
+
+    @Instagram: linear-gradient(135deg, hsl(37, 97%, 70%) , hsl(329, 70%, 58%));
+    @YouTube: hsl(348, 97%, 39%);
+
+    /* Dark Theme */
+
+    @Toggle: linear-gradient(135deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+    /* Light Theme */
+
+    @Toggle: hsl(230, 22%, 74%);
+
+    /* Neutral */
+
+    /* Dark Theme */
+
+    @VeryDarkBlueBG: hsl(230, 17%, 14%);
+    @VeryDarkBlueTopBGPattern: hsl(232, 19%, 15%);
+    @DarkDesaturatedBlueCardBG: hsl(228, 28%, 20%);
+    @DesaturatedBlueText: hsl(228, 34%, 66%);
+    @WhiteText: hsl(0, 0%, 100%);
+
+    /* Light Theme */
+
+    @WhiteBG: hsl(0, 0%, 100%);
+    @VeryPaleBlueTopBGPattern: hsl(225, 100%, 98%);
+    @LightGrayishBlueCardBG: hsl(227, 47%, 96%);
+    @DarkGrayishBlueText: hsl(228, 12%, 44%);
+    @VeryDarkBlueText: hsl(230, 17%, 14%);
+
+
+*, *::before, *::after { box-sizing: border-box }
+
+img { max-width: 100% }
+
+body {
+    font-size: @fontsize;
+    font-family: @fontfamily;
+    background-color: @WhiteBG;
+}
+
+.socialDash {
+    margin: 0 auto;
+    padding: 1rem;
+
+    &__title {
+        margin-bottom: 0.25rem;
+        letter-spacing: 0.06rem;
+    }
+
+    &__subtitle {
+        color: @DarkGrayishBlueText;
+        border-bottom: 1px solid @DarkGrayishBlueText;
+        padding-bottom: 1rem;
+        margin-top: 0;
+    }
+
+    &__switchContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__switchText {
+        color: @DarkGrayishBlueText;
+        font-size: .83em;
+        font-weight: 700;
+    }
+
+    &__switchToggle {
+        height: 1rem;
+        width: 2rem;
+        border-radius: 10px;
+        background-color: @Toggle;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        &--ball {
+            height: .8rem;
+            width: .8rem;
+            border-radius: 50%;
+            background-color: white;
+            margin-right: 3px;
+        }
+    }
+
+
+    &__summaryGrid {
+        &__container {
+            background-color: @LightGrayishBlueCardBG;
+            margin: 2rem 0;
+            padding: 2rem;
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: 20px auto 20px;
+            text-align: center;
+        }
+
+        &__handle {
+            grid-row: 1; 
+            grid-column: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__icon,   
+        &__arrow { 
+            padding-right: .5rem;
+        }
+
+        &__text {
+            color: @DarkGrayishBlueText;
+            font-size: .7rem;
+        }
+
+        &__subtitle {
+            color: @DarkGrayishBlueText;
+            grid-column: 2;
+            grid-row: 3;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            font-size: .8em;
+        }
+
+        &__change {
+            grid-column: 2;
+            grid-row: 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__number {
+            grid-column: 2;
+            grid-row: 2;
+            font-size: 3rem;
+            font-weight: 700;;
+        }
+
+        &__increase {
+            color: @LimeGreen;
+            font-size: .7em;
+        }
+    }
+
+    &__overview {
+
+        &__title {
+            color: @DarkGrayishBlueText;
+        }
+    }
+
+    &__overviewGrid {
+
+        &__subtitle {
+            color: @DarkGrayishBlueText;
+        }
+    }
+
+}
+
+
+
+@media only screen and (min-width: 1000px) {
+    body {
+        text-align: center;
+    }
+}

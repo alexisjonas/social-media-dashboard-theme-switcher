@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="css/style.css">
-  
-  <title>Frontend Mentor | Social Media Dashboard With Theme Switcher</title>
+  <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
+  <script src="//cdn.jsdelivr.net/npm/less" ></script>  
 
+  <title>Frontend Mentor | Social Media Dashboard With Theme Switcher</title>
+  
 </head>
 <body>
 
@@ -17,74 +17,94 @@
     <h1 class="socialDash__title">
       Social Media Dashboard
     </h1>
-    <h3 class="socialDash__subtitle">
+    <h5 class="socialDash__subtitle">
       Total Followers: 23,004
-    </h3>
+    </h5>
   
-    <span class="socialDash__switchText">Dark Mode</span>
-    <span class="socialDash__switchToggle"></span>
+    <div class="socialDash__switchContainer">
+      <span class="socialDash__switchText">Dark Mode</span>
+      <div class="socialDash__switchToggle">
+        <div class="socialDash__switchToggle--ball"></div>
+      </div>
+    </div>
   
     
   
     <div class="socialDash__summaryGrid">
-      <div class="socialDash__summaryGrid__facebook">
-        <img src="images/icon-facebook.svg" alt="facebook icon">
-        <h4 class="socialDash__summaryGrid__handle">
-          @nathanf
-        </h4>
+      <div class="socialDash__summaryGrid__container socialDash__summaryGrid__container--facebook">
+        <div class="socialDash__summaryGrid__handle">
+          <img src="images/icon-facebook.svg" alt="facebook icon" class="socialDash__summaryGrid__icon">
+          <h4 class="socialDash__summaryGrid__text">
+            @nathanf
+          </h4>
+        </div>
         <span class="socialDash__summaryGrid__number">1987</span>
         <p class="socialDash__summaryGrid__subtitle">
           Followers
         </p>
-        <img src="images/icon-up.svg" alt="arrow" class="socialDash__arrow">
-        <p class="socialDash__summaryGrid__increase">
-          12 Today
-        </p>
+        <div class="socialDash__summaryGrid__change">
+          <img src="images/icon-up.svg" alt="arrow" class="socialDash__summaryGrid__arrow">
+          <p class="socialDash__summaryGrid__increase">
+            12 Today
+          </p>
+        </div>
       </div>
     
-      <div class="socialDash__summaryGrid__twitter">
-        <img src="images/icon-twitter.svg" alt="twitter icon">
-        <h4 class="socialDash__summaryGrid__handle">
-          @nathanf
-        </h4>
+      <div class="socialDash__summaryGrid__container socialDash__summaryGrid__container--twitter">
+        <div class="socialDash__summaryGrid__handle">
+          <img src="images/icon-twitter.svg" alt="twitter icon" class="socialDash__summaryGrid__icon">
+          <h4 class="socialDash__summaryGrid__text">
+            @nathanf
+          </h4>
+        </div>
         <span class="socialDash__summaryGrid__number">1044</span>
         <p class="socialDash__summaryGrid__subtitle">
           Followers
         </p>
-        <img src="images/icon-up.svg" alt="arrow" class="socialDash__arrow">
-        <p class="socialDash__summaryGrid__increase">
-          99 Today
-        </p>
+        <div class="socialDash__summaryGrid__change">
+          <img src="images/icon-up.svg" alt="arrow" class="socialDash__summaryGrid__arrow">
+          <p class="socialDash__summaryGrid__increase">
+            99 Today
+          </p>
+        </div>
       </div>
     
-      <div class="socialDash__summaryGrid__instagram">
-        <img src="images/icon-instagram.svg" alt="instagram icon">
-        <h4 class="socialDash__summaryGrid__handle">
-          @realnathanf
-        </h4>
+      <div class="socialDash__summaryGrid__container socialDash__summaryGrid__container--instagram">
+        <div class="socialDash__summaryGrid__handle">
+          <img src="images/icon-instagram.svg" alt="instagram icon" class="socialDash__summaryGrid__icon">
+          <h4 class="socialDash__summaryGrid__text">
+            @realnathanf
+          </h4>
+        </div>
         <span class="socialDash__summaryGrid__number">11k</span>
         <p class="socialDash__summaryGrid__subtitle">
           Followers
         </p>
-        <img src="images/icon-up.svg" alt="arrow" class="socialDash__arrow">
-        <p class="socialDash__summaryGrid__increase">
-          1099 Today
-        </p>
+        <div class="socialDash__summaryGrid__change">
+          <img src="images/icon-up.svg" alt="arrow" class="socialDash__summaryGrid__arrow">
+          <p class="socialDash__summaryGrid__increase">
+            1099 Today
+          </p>
+        </div>
       </div>
     
-      <div class="socialDash__summaryGrid__youtube">
-        <img src="images/icon-youtube.svg" alt="youtube icon">
-        <h4 class="socialDash__summaryGrid__handle">
-          Nathan F.
-        </h4>
+      <div class="socialDash__summaryGrid__container socialDash__summaryGrid__container--youtube">
+        <div class="socialDash__summaryGrid__handle">
+          <img src="images/icon-youtube.svg" alt="youtube icon" class="socialDash__summaryGrid__icon">
+          <h4 class="socialDash__summaryGrid__text">
+            Nathan F.
+          </h4>
+        </div>
         <span class="socialDash__summaryGrid__number">8239</span>
         <p class="socialDash__summaryGrid__subtitle">
           Subscribers
         </p>
-        <img src="images/icon-down.svg" alt="arrow" class="socialDash__arrow">
-        <p class="socialDash__summaryGrid__increase">
-          144 Today
-        </p>
+        <div class="socialDash__summaryGrid__change">
+          <img src="images/icon-down.svg" alt="arrow" class="socialDash__summaryGrid__arrow">
+          <p class="socialDash__summaryGrid__increase">
+            144 Today
+          </p>
+        </div>
       </div>
     </div>
   
@@ -100,7 +120,7 @@
           <h5 class="socialDash__overviewGrid__subtitle">
             Page Views
           </h5>
-          <img src="images/icon-facebook.svg" alt="facebook icon">
+          <img src="images/icon-facebook.svg" alt="facebook icon" class="socialDash__icon">
           <span class="socialDash__overviewGrid__number">87</span>
           <img src="images/icon-up.svg" alt="arrow" class="socialDash__arrow">
           <span class="socialDash__overviewGrid__percentDif">3%</span>
@@ -110,7 +130,7 @@
           <h5 class="socialDash__overviewGrid__subtitle">
             Likes
           </h5>
-          <img src="images/icon-facebook.svg" alt="facebook icon">
+          <img src="images/icon-facebook.svg" alt="facebook icon" class="socialDash__icon">
           <span class="socialDash__overviewGrid__number">52</span>
           <img src="images/icon-down.svg" alt="arrow" class="socialDash__arrow">
           <span class="socialDash__overviewGrid__percentDif">2%</span>
@@ -120,7 +140,7 @@
           <h5 class="socialDash__overviewGrid__subtitle">
             Likes
           </h5>
-          <img src="images/icon-instagram.svg" alt="instagram icon">
+          <img src="images/icon-instagram.svg" alt="instagram icon" class="socialDash__icon">
           <span class="socialDash__overviewGrid__number">5462</span>
           <img src="images/icon-up.svg" alt="arrow" class="socialDash__arrow">
           <span class="socialDash__overviewGrid__percentDif">2257%</span>
@@ -130,7 +150,7 @@
           <h5 class="socialDash__overviewGrid__subtitle">
             Profile Views
           </h5>
-          <img src="images/icon-instagram.svg" alt="instagram icon">
+          <img src="images/icon-instagram.svg" alt="instagram icon" class="socialDash__icon">
           <span class="socialDash__overviewGrid__number">52k</span>
           <img src="images/icon-up.svg" alt="arrow" class="socialDash__arrow">
           <span class="socialDash__overviewGrid__percentDif">1375%</span>
@@ -140,7 +160,7 @@
           <h5 class="socialDash__overviewGrid__subtitle">
             Retweets
           </h5>
-          <img src="images/icon-twitter.svg" alt="twitter icon">
+          <img src="images/icon-twitter.svg" alt="twitter icon" class="socialDash__icon">
           <span class="socialDash__overviewGrid__number">117</span>
           <img src="images/icon-up.svg" alt="arrow" class="socialDash__arrow">
           <span class="socialDash__overviewGrid__percentDif">303%</span>
@@ -149,7 +169,7 @@
           <h5 class="socialDash__overviewGrid__subtitle">
             Likes
           </h5>
-          <img src="images/icon-twitter.svg" alt="twitter icon">
+          <img src="images/icon-twitter.svg" alt="twitter icon" class="socialDash__icon">
           <span class="socialDash__overviewGrid__number">507</span>
           <img src="images/icon-up.svg" alt="arrow" class="socialDash__arrow">
           <span class="socialDash__overviewGrid__percentDif">553%</span>
@@ -159,7 +179,7 @@
           <h5 class="socialDash__overviewGrid__subtitle">
             Likes
           </h5>
-          <img src="images/icon-youtube.svg" alt="youtube icon">
+          <img src="images/icon-youtube.svg" alt="youtube icon" class="socialDash__icon">
           <span class="socialDash__overviewGrid__number">107</span>
           <img src="images/icon-down.svg" alt="arrow" class="socialDash__arrow">
           <span class="socialDash__overviewGrid__percentDif">19%</span>
@@ -169,7 +189,7 @@
           <h5 class="socialDash__overviewGrid__subtitle">
             Total Views
           </h5>
-          <img src="images/icon-youtube.svg" alt="youtube icon">
+          <img src="images/icon-youtube.svg" alt="youtube icon" class="socialDash__icon">
           <span class="socialDash__overviewGrid__number">1407</span>
           <img src="images/icon-down.svg" alt="arrow" class="socialDash__arrow">
           <span class="socialDash__overviewGrid__percentDif">12%</span>
