@@ -277,6 +277,7 @@ body.dark {
 
         &__subtitle {
             color: @DarkGrayishBlueText;
+            justify-self: start;
         }
 
         &__icon {
@@ -287,6 +288,7 @@ body.dark {
         &__number {
             font-weight: 700;
             font-size: 2rem;
+            justify-self: start;
         }
 
         &__change {
@@ -316,7 +318,41 @@ body.dark {
 
 
 @media only screen and (min-width: 1000px) {
-    body {
-        text-align: center;
+
+    .socialDash {
+        width: 80%;
+
+        &__subtitle { border-bottom: none; }
+
+        &__switchContainer { 
+            position: relative;
+            top: -50px;
+            justify-content: flex-end; 
+        }
+
+        &__switchText { margin-right: 10px;}
+
+        &__summaryGrid {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            &__container {
+                width: 25%;
+                &:not(:last-child){ margin-right: 20px;}
+            }
+        }
+
+        &__overviewGrid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            &__container { 
+                width: 23%;
+                &:not(:last-child){ margin-right: 10px;}
+            }
+        }
+
+
     }
 }
