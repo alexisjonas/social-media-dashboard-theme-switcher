@@ -75,6 +75,7 @@ body {
     &__switchContainer {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     &__switchText {
@@ -83,23 +84,37 @@ body {
         font-weight: 700;
     }
 
+    &__checkbox {
+        display: none;
+
+        &:checked ~ .socialDash__switchToggle::before {
+            transition: 0.3s ease;
+            transform: translateX(15px);
+        }
+    }
+
     &__switchToggle {
         height: 1rem;
         width: 2rem;
         border-radius: 10px;
-        background-color: @Toggle;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        background: @Toggle;
+        display: block;
+        cursor: pointer;
+        user-select: none;
+        padding: 1.5px;
 
-        &--ball {
+        &::before {
+            content: "";
+            display: block;
+            text-align: center;
             height: .8rem;
             width: .8rem;
             border-radius: 50%;
             background-color: white;
-            margin-right: 3px;
         }
     }
+
+    
 
 
     &__summaryGrid {
@@ -198,14 +213,43 @@ body {
 
     &__overviewGrid {
 
+        &__container {
+            background-color: @LightGrayishBlueCardBG;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            max-height: 150px;
+            max-width: 300px;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            border-radius: 5px;
+        }
+
         &__subtitle {
             color: @DarkGrayishBlueText;
+        }
+
+        &__icon {
+            justify-self: end;
+            align-self: center;
+        }
+
+        &__number {
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        &__change {
+            align-self: center;
+            justify-self: end;
         }
 
         &__percentDif {
             color: @LimeGreen;
             font-size: .7em;
             font-weight: 700; 
+            grid-row: 2; 
+            grid-column: 2;
 
             &--decrease{
                 color: @BrightRed;  
