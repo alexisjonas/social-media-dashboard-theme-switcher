@@ -19,31 +19,25 @@
     @Instagram: linear-gradient(to right, hsl(37, 97%, 70%) , hsl(329, 70%, 58%));
     @YouTube: hsl(348, 97%, 39%);
 
-    /* Dark Theme */
-
-    @Toggle: linear-gradient(135deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
-
     /* Light Theme */
 
     @Toggle: hsl(230, 22%, 74%);
-
-    /* Neutral */
-
-    /* Dark Theme */
-
-    @VeryDarkBlueBG: hsl(230, 17%, 14%);
-    @VeryDarkBlueTopBGPattern: hsl(232, 19%, 15%);
-    @DarkDesaturatedBlueCardBG: hsl(228, 28%, 20%);
-    @DesaturatedBlueText: hsl(228, 34%, 66%);
-    @WhiteText: hsl(0, 0%, 100%);
-
-    /* Light Theme */
 
     @WhiteBG: hsl(0, 0%, 100%);
     @VeryPaleBlueTopBGPattern: hsl(225, 100%, 98%);
     @LightGrayishBlueCardBG: hsl(227, 47%, 96%);
     @DarkGrayishBlueText: hsl(228, 12%, 44%);
     @VeryDarkBlueText: hsl(230, 17%, 14%);
+
+    /* Dark Theme */
+
+    @ToggleDark: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+    @VeryDarkBlueBG: hsl(230, 17%, 14%);
+    @VeryDarkBlueTopBGPattern: hsl(232, 19%, 15%);
+    @DarkDesaturatedBlueCardBG: hsl(228, 28%, 20%);
+    @DesaturatedBlueText: hsl(228, 34%, 66%);
+    @WhiteText: hsl(0, 0%, 100%);
 
 
 *, *::before, *::after { box-sizing: border-box }
@@ -56,6 +50,62 @@ body {
     background-color: @WhiteBG;
 }
 
+
+// Dark Theme colors 
+
+body.dark {
+
+    background-color: @VeryDarkBlueBG;
+
+    .socialDash {
+
+        &__title { color: @WhiteText; }
+
+        &__subtitle {
+            color: @DesaturatedBlueText;
+            border-bottom: 1px solid @DesaturatedBlueText;
+        }
+
+        &__switchText { color: @DesaturatedBlueText; }
+
+        &__switchToggle { 
+            background-image: @ToggleDark; 
+            &::before { background-color: @DarkDesaturatedBlueCardBG; }
+        }
+
+
+        &__summaryGrid {
+            &__container { background-color: @DarkDesaturatedBlueCardBG;}
+
+            &__text { color: @DesaturatedBlueText; }
+    
+            &__subtitle { color: @DesaturatedBlueText; }
+
+            &__number { color: @WhiteText; }
+        }
+
+        &__overview {
+
+            &__title {
+                color: @WhiteText;
+            }
+        }
+    
+        &__overviewGrid {
+    
+            &__container { background-color: @DarkDesaturatedBlueCardBG; }
+    
+            &__subtitle { color: @DesaturatedBlueText; }
+
+            &__number { color: @WhiteText;}
+
+        }
+    
+    }
+
+
+
+}
 .socialDash {
     margin: 0 auto;
     padding: 1rem;
